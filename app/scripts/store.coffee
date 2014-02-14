@@ -1,0 +1,1 @@
+Syrup.ApplicationAdapter = DS.FixtureAdapter
