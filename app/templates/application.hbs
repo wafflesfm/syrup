@@ -1,7 +1,7 @@
 <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="row">
-            <div class="col-md-9 col-md-offset-3">
+            <div class="col-md-10 col-md-offset-2">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle navigation</span>
@@ -114,17 +114,22 @@
 
 <div class="container" id="main">
     <div class="row">
-        <div class="col-md-3">
-            <div class="sidebar-nav">
-                <strong>Colors</strong>
-                <ul class="list-group">
-                {{#each item in controller}}
-                    <li class="list-group-item">{{item}}</li>
-                {{/each}}
-                </ul>
-            </div>
+        <div class="col-md-2">
+            <ul class="list-group">
+                {{#link-to 'index' classNames="list-group-item"}}Home{{/link-to}}
+                <a href="#" class="list-group-item">Browse</a>
+                <a href="#" class="list-group-item">Requests</a>
+                <a href="#" class="list-group-item">Search</a>
+                <a href="#" class="list-group-item">Upload</a>
+                <a href="#" class="list-group-item">Forums</a>
+                <a href="#" class="list-group-item">Articles</a>
+                <a href="#" class="list-group-item">Shop</a>
+                <a href="#" class="list-group-item">Top 10</a>
+                <a href="#" class="list-group-item">Log</a>
+                <a href="#" class="list-group-item">Site Docs</a>
+            </ul>
         </div>
-        <div class="col-md-9">
+        <div class="col-md-10">
             {{outlet}}
         </div>
     </div>
