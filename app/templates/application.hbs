@@ -1,34 +1,131 @@
-<div>
-    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Your App</a>
-        </div>
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-        </div>
-    </nav>
-    <div class="container" id="main">
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
         <div class="row">
-            <div>
-                <div class="col-md-3">
-                    <div class="well sidebar-nav">
-                        <strong>Colors</strong>
-                        <ul class="list-group">
-                        {{#each item in controller}}
-                            <li class="list-group-item">{{item}}</li>
-                        {{/each}}
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-9">
-                    {{outlet}}
-                </div>
+            <div class="col-md-9 col-md-offset-3">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    {{#link-to 'index' classNames="navbar-brand"}}Syrup{{/link-to}}
+                </div> <!-- .navbar-header -->
+
+                <div class="collapse navbar-collapse">
+                    <form class="navbar-form navbar-left" role="search">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Search">
+                        </div>
+                        <button type="submit" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                            <span class="sr-only">Search</span>
+                        </button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li id="dropdown-messages" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-comment"></span>
+                                <span class="sr-only">Messages</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header" role="presentation">Messages</li>
+                                <li class="message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                                <img class="media-object" src="http://placekitten.com/50/50">
+                                            </span>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Edgewyn</h5>
+                                                <b>Message Title</b>
+                                                <span>This is the message body.</span>
+                                                <small class="text-muted">10:23pm</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                                <li class="message">
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                                <img class="media-object" src="http://placekitten.com/50/50">
+                                            </span>
+                                            <div class="media-body">
+                                                <h5 class="media-heading">Edgewyn</h5>
+                                                <b>Message Title</b>
+                                                <span>This is the message body.</span>
+                                                <small class="text-muted">10:23pm</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> <!-- #dropdown-messages.dropdown -->
+                        <li id="dropdown-notifications" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-globe"></span>
+                                <span class="sr-only">Notifications</span>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-header" role="presentation">Notifications</li>
+                                <li>
+                                    <a href="#">
+                                        <div class="media">
+                                            <span class="pull-left">
+                                                <img class="media-object" src="http://placekitten.com/50/50">
+                                            </span>
+                                            <div class="media-body">
+                                                <b>Edgewyn</b> posted in <b>What music player do you use?</b>:
+                                                &ldquo;Rdio and Google Music.&rdquo;
+                                                <br />
+                                                <small class="text-muted">10:23pm</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li> <!-- #dropdown-notifications.dropdown -->
+                        <li><a href="#">
+                            <img src="http://placekitten.com/16/16">
+                            edgewyn
+                        </a></li>
+                        <li id="dropdown-settings" class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <span class="glyphicon glyphicon-cog"></span>
+                                <span class="sr-only">Settings</span>
+                                <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Settings</a></li>
+                                <li><a href="#">Privacy</a></li>
+                                <li><a href="#">Log out</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Help</a></li>
+                                <li><a href="#">Contact staff</a></li>
+                            </ul>
+                        </li> <!-- #dropdown-settings.dropdown -->
+                    </ul>
+                </div> <!-- .navbar-collapse -->
+            </div> <!-- .col-md-9 -->
+        </div> <!-- .row -->
+    </div> <!-- .container -->
+</nav>
+
+<div class="container" id="main">
+    <div class="row">
+        <div class="col-md-3">
+            <div class="sidebar-nav">
+                <strong>Colors</strong>
+                <ul class="list-group">
+                {{#each item in controller}}
+                    <li class="list-group-item">{{item}}</li>
+                {{/each}}
+                </ul>
             </div>
+        </div>
+        <div class="col-md-9">
+            {{outlet}}
         </div>
     </div>
 </div>
