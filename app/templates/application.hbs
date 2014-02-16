@@ -195,7 +195,7 @@
 
 <div class="container" id="main">
     <div class="row">
-        <div class="col-md-2">
+        <div id="sidebar" class="col-md-2">
             <ul class="list-group">
                 {{#link-to 'index' classNames="list-group-item"}}Home{{/link-to}}
                 {{#link-to 'torrents' classNames="list-group-item"}}Music{{/link-to}}
@@ -218,7 +218,7 @@
         <div class="col-md-7">
             {{outlet}}
         </div>
-        <div class="col-md-3">
+        <div id="tertiary" class="col-md-3">
            <div class="panel panel-default">
                <div class="panel-body">
                    Monthly donation goal
