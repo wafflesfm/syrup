@@ -1,4 +1,10 @@
-Syrup.Torrent = DS.Model.extend({});
+randomDate = (start, end) ->
+    new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
+
+Syrup.Torrent = DS.Model.extend(
+    name: DS.attr 'string'
+    posted_at: DS.attr 'date'
+);
 
 # Probably should be mixed-in...
 Syrup.Torrent.reopen
@@ -13,4 +19,4 @@ Syrup.Torrent.reopen
 Syrup.Torrent.FIXTURES = []
 
 for num in [1..100]
-    Syrup.Torrent.FIXTURES[num] = {id: num}
+    Syrup.Torrent.FIXTURES[num] = {id: num, name: "Torrent #{num}", posted_at: randomDate(new Date(2012, 1, 1), new Date())}
