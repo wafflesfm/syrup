@@ -1,0 +1,50 @@
+@import "compass/css3/border-radius";
+
+$thumbnail-img-width: 153px;
+
+.cluster {
+
+    .thumbnail {
+        display: inline-block;
+        width: $thumbnail-img-width;
+        // Subtract 1 from right margin to account for inline-block's whitespace
+        // @see http://css-tricks.com/fighting-the-space-between-inline-block-elements/ "Negative Margin"
+        margin: 0 ($line-height-computed/2 - 1) $line-height-computed/2 0;
+        padding: 0;
+        border: 0;
+
+        &.last {
+            margin-right: 0;
+        }
+
+        .caption {
+            overflow: hidden;
+            padding: $line-height-computed/2 0 0;
+
+            a {
+                display: block;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+
+            h4 {
+                overflow: hidden;
+                font-size: $font-size-base;
+                margin: 0;
+
+                a {
+                    color: $text-color;
+                }
+            }
+
+            p {
+                overflow: hidden;
+
+                a {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
+}
