@@ -2,9 +2,9 @@
 
 $thumbnail-img-width: 153px;
 
-.cluster {
+.list-group {
 
-    .thumbnail {
+    .list-group-item.thumbnail {
         display: inline-block;
         width: $thumbnail-img-width;
         // Subtract 1 from right margin to account for inline-block's whitespace
@@ -13,7 +13,7 @@ $thumbnail-img-width: 153px;
         padding: 0;
         border: 0;
 
-        &.last {
+        &:last-child {
             margin-right: 0;
         }
 
