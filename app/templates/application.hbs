@@ -195,10 +195,12 @@
 
 <div class="container" id="main">
     <div class="row">
-        <div class="col-md-2">
+        <div id="sidebar" class="col-md-2">
             <ul class="list-group">
                 {{#link-to 'index' classNames="list-group-item"}}Home{{/link-to}}
-                <a href="#" class="list-group-item">Browse</a>
+                {{#link-to 'torrents.music' classNames="list-group-item"}}Music{{/link-to}}
+                {{#link-to 'torrents.books' classNames="list-group-item"}}Books{{/link-to}}
+                {{#link-to 'torrents.apps' classNames="list-group-item"}}Apps{{/link-to}}
                 <a href="#" class="list-group-item">Requests</a>
                 <a href="#" class="list-group-item">Forums</a>
                 <a href="#" class="list-group-item">Upload</a>
@@ -216,7 +218,7 @@
         <div class="col-md-7">
             {{outlet}}
         </div>
-        <div class="col-md-3">
+        <div id="tertiary" class="col-md-3">
            <div class="panel panel-default">
                <div class="panel-body">
                    Monthly donation goal
