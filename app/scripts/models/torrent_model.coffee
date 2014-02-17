@@ -1,22 +1,33 @@
 randomDate = (start, end) ->
     new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()))
 
-Syrup.Torrent = DS.Model.extend(
+Syrup.Torrent = DS.Model.extend
     name: DS.attr 'string'
-    posted_at: DS.attr 'date'
-);
+    imageUrl: DS.attr 'string'
+    postedAt: DS.attr 'date'
+    category: DS.attr 'string'
 
 # Probably should be mixed-in...
 Syrup.Torrent.reopen
     attributes: (->
         model = @
-        Ember.keys(@get 'data').map( (key)->
+        Ember.keys(@get 'data').map (key)->
             Em.Object.create(model: model, key: key, valueBinding: 'model.' + key)
-        )
     ).property()
 
 
 Syrup.Torrent.FIXTURES = []
 
 for num in [1..100]
-    Syrup.Torrent.FIXTURES[num] = {id: num, name: "Torrent #{num}", posted_at: randomDate(new Date(2012, 1, 1), new Date())}
+    category = switch
+        when num % 5 == 0 then "books"
+        when num % 3 == 0 then "apps"
+        else "music"
+
+    Syrup.Torrent.FIXTURES[num] = {
+        id: num
+        name: "Torrent #{num}"
+        postedAt: randomDate(new Date(2012, 1, 1), new Date())
+        imageUrl: "http://placekitten.com/153/153"
+        category: category
+    }

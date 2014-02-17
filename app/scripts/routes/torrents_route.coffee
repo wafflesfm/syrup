@@ -1,5 +1,4 @@
-Syrup.TorrentsRoute = Ember.Route.extend(
-  model: ->
-    @get('store').find('torrent')
-)
+Syrup.TorrentsRoute = Ember.Route.extend
+    model: ->
+        @get('store').find 'torrent'
 
