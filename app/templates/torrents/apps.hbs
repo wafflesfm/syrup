@@ -1,0 +1,14 @@
+<div class="albums list-group">
+    <h1 class="list-group-header">Apps</h1>
+    {{#each model}}
+        <div class="list-group-item thumbnail">
+            {{#link-to 'torrent' this}}<img {{bind-attr src="imageUrl"}}>{{/link-to}}
+            <div class="caption">
+                <h4>
+                    {{#link-to 'torrent' this}}{{this.name}}{{/link-to}}
+                </h4>
+                <p>{{this.category}}</p>
+            </div>
+        </div>
+    {{/each}}
+</div>
