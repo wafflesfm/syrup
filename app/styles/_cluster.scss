@@ -2,7 +2,7 @@
 
 $thumbnail-img-width: 153px;
 
-.list-group {
+.albums.list-group {
 
     .list-group-item.thumbnail {
         display: inline-block;
@@ -13,7 +13,7 @@ $thumbnail-img-width: 153px;
         padding: 0;
         border: 0;
 
-        &:last-child {
+        &:nth-child(4n+1) {
             margin-right: 0;
         }
 
